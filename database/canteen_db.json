@@ -1,0 +1,76 @@
+[
+{"type":"header","version":"5.2.0","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"canteen_db"},
+{"type":"table","name":"canteen_dept","database":"canteen_db","data":
+[
+{"id":"1","name":"School of Engineering & Tech.","status":"1","delete_flag":"0","date_created":"2022-02-09 08:49:34","date_updated":"2022-10-11 22:46:19"},
+{"id":"2","name":"School of Life Science","status":"1","delete_flag":"0","date_created":"2022-02-09 08:49:46","date_updated":"2022-10-11 22:46:41"},
+{"id":"3","name":"School of Physical Science","status":"1","delete_flag":"0","date_created":"2022-02-09 08:50:31","date_updated":"2022-10-11 22:46:55"},
+{"id":"4","name":"School of Education","status":"1","delete_flag":"0","date_created":"2022-02-09 08:50:36","date_updated":"2022-10-11 22:47:09"},
+{"id":"5","name":"School of Social Science","status":"1","delete_flag":"1","date_created":"2022-02-09 08:50:41","date_updated":"2022-10-11 22:47:59"}
+]
+}
+,{"type":"table","name":"canteen_list","database":"canteen_db","data":
+[
+{"id":"4","code":"202210-00001","canteen_dept_id":"1","canteen_name":"SET Canteen","canteen_owner":"Vanlaldiki","contact":"8945265800","username":"SET","password":"9c740c9ae927a5793fe29170264736e4","avatar":null,"status":"1","delete_flag":"0","date_created":"2022-10-11 22:49:11","date_updated":null}
+]
+}
+,{"type":"table","name":"cart_list","database":"canteen_db","data":
+[
+
+]
+}
+,{"type":"table","name":"category_list","database":"canteen_db","data":
+[
+{"id":"10","canteen_id":"4","name":"Chow","description":"Chow ","status":"1","delete_flag":"0","date_created":"2022-10-12 22:02:58","date_updated":null}
+]
+}
+,{"type":"table","name":"department_list","database":"canteen_db","data":
+[
+{"id":"1","department":"Computer Engineering","status":"1","delete_flag":"0","date_created":"2022-02-09 08:49:34","date_updated":"2022-10-11 22:46:19"},
+{"id":"2","department":"Information Technology","status":"1","delete_flag":"0","date_created":"2022-02-09 08:49:46","date_updated":"2022-10-11 22:46:41"},
+{"id":"3","department":"Civil Engineering","status":"1","delete_flag":"0","date_created":"2022-02-09 08:50:31","date_updated":"2022-10-11 22:46:55"},
+{"id":"4","department":"Electrical Engineering","status":"1","delete_flag":"0","date_created":"2022-02-09 08:50:36","date_updated":"2022-10-11 22:47:09"},
+{"id":"5","department":"Electronics & Telecommunication Engineering","status":"1","delete_flag":"1","date_created":"2022-02-09 08:50:41","date_updated":"2022-10-11 22:47:59"}
+]
+}
+,{"type":"table","name":"order_items","database":"canteen_db","data":
+[
+{"order_id":"5","product_id":"9","quantity":"1","price":"60","date_created":"2022-10-12 23:27:28"},
+{"order_id":"6","product_id":"9","quantity":"1","price":"60","date_created":"2022-10-13 23:28:25"},
+{"order_id":"7","product_id":"9","quantity":"1","price":"60","date_created":"2022-10-13 23:29:49"}
+]
+}
+,{"type":"table","name":"order_list","database":"canteen_db","data":
+[
+{"id":"5","code":"202210-00001","client_id":"3","canteen_id":"4","total_amount":"60","delivery_address":"Chawnpui","status":"1","date_created":"2022-10-12 23:27:28","date_updated":"2022-10-12 23:28:29"},
+{"id":"6","code":"202210-00002","client_id":"3","canteen_id":"4","total_amount":"60","delivery_address":"Name : Tluanga Dept. : CE ID No. : 364636 Ph No. : 7894561230","status":"0","date_created":"2022-10-13 23:28:25","date_updated":"2022-10-13 23:28:25"},
+{"id":"7","code":"202210-00003","client_id":"3","canteen_id":"4","total_amount":"60","delivery_address":"Name : Tluanga, Dept. : CE ID No. : 364636 Ph No. : 7894561230","status":"0","date_created":"2022-10-13 23:29:49","date_updated":"2022-10-13 23:29:49"}
+]
+}
+,{"type":"table","name":"product_list","database":"canteen_db","data":
+[
+{"id":"9","canteen_id":"4","category_id":"10","name":"Chow Satui leih","description":"&lt;p&gt;Chow Satui leih&lt;\/p&gt;","price":"60","image_path":"uploads\/products\/7.png?v=1644383066","status":"1","delete_flag":"0","date_created":"2022-10-12 22:03:31","date_updated":"2022-10-12 23:23:29"},
+{"id":"10","canteen_id":"4","category_id":"10","name":"Chow 2 ","description":"&lt;p&gt;ctest&lt;\/p&gt;","price":"100","image_path":null,"status":"1","delete_flag":"0","date_created":"2022-10-12 23:13:56","date_updated":null}
+]
+}
+,{"type":"table","name":"student_list","database":"canteen_db","data":
+[
+{"id":"3","code":"202210-00001","firstname":"Tluanga","middlename":"","lastname":"Ralte","course":"B Tech","department":"CE","std_id":"364636","gender":"Male","contact":"7894561230","address":"Chawnpui","email":"tluanga@gmail.com","password":"cc03e747a6afbbcbf8be7668acfebee5","avatar":null,"status":"1","delete_flag":"0","date_created":"2022-10-12 22:43:46","date_updated":null}
+]
+}
+,{"type":"table","name":"system_info","database":"canteen_db","data":
+[
+{"id":"1","meta_field":"name","meta_value":"University Canteen Management System "},
+{"id":"6","meta_field":"short_name","meta_value":"University Canteen "},
+{"id":"11","meta_field":"logo","meta_value":"uploads\/logo-1644367440.png"},
+{"id":"13","meta_field":"user_avatar","meta_value":"uploads\/user_avatar.jpg"},
+{"id":"14","meta_field":"cover","meta_value":"uploads\/cover-1644367404.png"}
+]
+}
+,{"type":"table","name":"users","database":"canteen_db","data":
+[
+{"id":"1","firstname":"Adminstrator","lastname":"Admin","username":"admin","password":"0192023a7bbd73250516f069df18b500","avatar":"uploads\/avatar-1.png?v=1644472635","last_login":null,"type":"1","date_added":"2021-01-20 14:02:37","date_updated":"2022-02-10 13:57:15"}
+]
+}
+]
