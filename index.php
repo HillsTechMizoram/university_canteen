@@ -68,14 +68,14 @@
       <?php endif;?>    
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper pt-5" style="">
-        <?php if($page == "home" || $page == "about"): ?>
+        <!-- <?php if($page == "home" || $page == "about"): ?>
           <div id="header" class="shadow mb-4">
               <div class="d-flex justify-content-center h-100 w-100 align-items-center flex-column px-3">
                   <h1 class="w-100 text-center site-title px-5"><?php echo $_settings->info('name') ?></h1>
                   <!-- <h3 class="w-100 text-center px-5 site-subtitle"><?php echo $_settings->info('name') ?></h3> -->
-              </div>
-          </div>
-        <?php endif; ?>
+              <!-- </div> -->
+          <!-- </div> -->
+        <?php endif; ?> 
         <!-- Main content -->
         <section class="content ">
           <div class="container">

@@ -4,7 +4,10 @@ $category_ids = isset($_GET['cids']) ? $_GET['cids'] : 'all';
 <div class="content py-3">
     <div class="row">
         <div class="col-md-4">
-            <div class="card card-outline rounded-0 card-primary shadow">
+            <div class="card card-outline rounded-5 card-secondary shadow">
+            <div class="clear-fix mb-3"></div>
+            <h3 class="text-center"><b>Canteen Locate</b></h3>
+            <center><hr class="w-25"></center>
                 <div class="card-body">
                     <div class="list-group">
                         <div class="list-group-item list-group-item-action">
@@ -14,23 +17,26 @@ $category_ids = isset($_GET['cids']) ? $_GET['cids'] : 'all';
                             </div>
                         </div>
                         <?php 
-                        $categories = $conn->query("SELECT * FROM `category_list` where delete_flag = 0 and status = 1 order by `name` asc ");
+                        $categories = $conn->query("SELECT * FROM `canteen_list` where delete_flag = 0 and status = 1 order by `canteen_name` asc ");
                         while($row = $categories->fetch_assoc()):
                         ?>
                         <div class="list-group-item list-group-item-action">
                             <div class="custom-control custom-checkbox">
                                 <input class="custom-control-input custom-control-input-primary custom-control-input-outline cat_item" type="checkbox" id="cat_item<?= $row['id'] ?>" <?= in_array($row['id'],explode(',',$category_ids)) ? "checked" : '' ?> value="<?= $row['id'] ?>">
-                                <label for="cat_item<?= $row['id'] ?>" class="custom-control-label"> <?= $row['name'] ?></label>
+                                <label for="cat_item<?= $row['id'] ?>" class="custom-control-label"> <?= $row['canteen_name'] ?></label>
                             </div>
                         </div>
                         <?php endwhile; ?>
                     </div>
                 </div>
             </div>
-            
         </div>
+        
         <div class="col-md-8">
-            <div class="card card-outline card-primary shadow rounded-0">
+            <div class="card card-outline card-secondary shadow rounded-5">
+            <div class="clear-fix mb-3"></div>
+            <h3 class="text-center"><b>Menu</b></h3>
+            <center><hr class="w-25"></center>
                 <div class="card-body">
                     <div class="container-fluid">
                         <div class="row justify-content-center mb-3">
@@ -49,7 +55,7 @@ $category_ids = isset($_GET['cids']) ? $_GET['cids'] : 'all';
                             $swhere = "";
                             if(!empty($category_ids)):
                             if($category_ids !='all'){
-                                $swhere = " and p.category_id in ({$category_ids}) ";
+                                $swhere = " and p.canteen_id in ({$category_ids}) ";
                             }
                             if(isset($_GET['search']) && !empty($_GET['search'])){
                                 $swhere .= " and (p.name LIKE '%{$_GET['search']}%' or p.description LIKE '%{$_GET['search']}%' or c.name LIKE '%{$_GET['search']}%' or v.canteen_name LIKE '%{$_GET['search']}%') ";
@@ -58,7 +64,8 @@ $category_ids = isset($_GET['cids']) ? $_GET['cids'] : 'all';
                             $products = $conn->query("SELECT p.*, v.canteen_name as canteen, c.name as `category` FROM `product_list` p inner join canteen_list v on p.canteen_id = v.id inner join category_list c on p.category_id = c.id where p.delete_flag = 0 and p.`status` =1 {$swhere} order by RAND()");
                             while($row = $products->fetch_assoc()):
                             ?>
-                            <div class="col-lg-4 col-md-6 col-sm-12 product-item">
+                            
+                            <div class="col-lg-3 col-md-6 col-sm-12 product-item">
                                 <a href="./?page=products/view_product&id=<?= $row['id'] ?>" class="card shadow rounded-0 text-reset text-decoration-none">
                                 <div class="product-img-holder position-relative">
                                     <img src="<?= validate_image($row['image_path']) ?>" alt="Product-image" class="img-top product-img bg-gradient-gray">
@@ -75,16 +82,16 @@ $category_ids = isset($_GET['cids']) ? $_GET['cids'] : 'all';
                                         </div>
                                         <div class="d-flex">
                                             <div class="col-auto px-0"><small class="text-muted">Price: </small></div>
-                                            <div class="col-auto px-0 flex-shrink-1 flex-grow-1"><p class="m-0 pl-3"><small class="text-primary"><?= format_num($row['price']) ?></small></p></div>
+                                            <div class="col-auto px-0 flex-shrink-1 flex-grow-1"><p class="m-0 pl-3"><small class="text-secondary"><i class="fa fa-rupee-sign"></i><?= format_num($row['price']) ?></small></p></div>
                                         </div>
-                                        <p class="card-text truncate-3 w-100"><?= strip_tags(html_entity_decode($row['description'])) ?></p>
+                                        <p class="card-text truncate-2 w-150"><?= strip_tags(html_entity_decode($row['description'])) ?></p>
                                     </div>
                                 </a>
                             </div>
                             <?php endwhile; ?>
                             <?php else: ?>
                                 <div class="col-12 text-center">
-                                    Pleas select atleast 1 product category
+                                    Pleas select your canteen location
                                 </div>
                             <?php endif; ?>
                         </div>

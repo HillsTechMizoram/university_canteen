@@ -47,7 +47,7 @@
                 </div>
               </div>
             <?php else: ?>
-              <a href="./login.php" class="mx-2 text-light text-decoration-none font-weight-bolder">Student Login</a> | 
+              <a href="./login.php" class="mx-2 text-light text-decoration-none font-weight-bolder">Users Login</a> | 
               <a href="./canteen" class="mx-2 text-light text-decoration-none font-weight-bolder">Canteen Login</a> | 
               <a href="./admin" class="mx-2 text-light text-decoration-none font-weight-bolder">Admin Login</a>
             <?php endif; ?>

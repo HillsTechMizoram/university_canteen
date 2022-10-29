@@ -57,7 +57,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                         </div>
                         <div class="d-flex">
                             <div class="col-auto px-0"><small class="text-muted">Price: </small></div>
-                            <div class="col-auto px-0 flex-shrink-1 flex-grow-1"><p class="m-0 pl-3"><small class="text-primary"><?= format_num($price) ?></small></p></div>
+                            <div class="col-auto px-0 flex-shrink-1 flex-grow-1"><p class="m-0 pl-3"><small class="text-primary"><i class="fa fa-rupee-sign"></i><?= format_num($price) ?></small></p></div>
                         </div>
                         <div class="row align-items-end">
                             <div class="col-md-3 form-group">
