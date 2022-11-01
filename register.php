@@ -133,11 +133,11 @@
                                 <input type="file" id="logo" name="img" class="form-control form-control-sm form-control-border" onchange="displayImg(this,$(this))" accept="image/png, image/jpeg" required>
                             </div>
                         </div>
-                        <!-- <div class="row">
+                        <div class="row">
                             <div class="form-group col-md-6 text-center">
                                 <img src="<?= validate_image('') ?>" alt="Shop Logo" id="cimg" class="border border-gray img-thumbnail">
                             </div>
-                        </div> -->
+                        </div>
                         <div class="row align-item-end">
                             <div class="col-8">
                                 <a href="<?= base_url ?>">Back to Site</a>

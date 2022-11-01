@@ -39,6 +39,7 @@ Class Users extends DBConnection {
 					$fname = 'uploads/avatar-'.($id).'.png';
 					$dir_path =base_app. $fname;
 					$upload = $_FILES['img']['tmp_name'];
+				
 					$type = mime_content_type($upload);
 					$allowed = array('image/png','image/jpeg');
 					if(!in_array($type,$allowed)){
@@ -329,7 +330,7 @@ Class Users extends DBConnection {
 					}	
 				}
 
-				if(isset($_FILES['img']) && $_FILES['img']['tmp_name'] != ''){
+				if(isset($_FILES['img']) && $_FILES['img']['tmp_name'] != ''){ 
 					if(!is_dir(base_app."uploads/clients"))
 					mkdir(base_app."uploads/clients");
 					$fname = 'uploads/clients/'.($vid).'.png';

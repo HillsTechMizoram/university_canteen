@@ -153,10 +153,10 @@ Class Master extends DBConnection {
 					$resp['msg'] = " Product successfully updated.";
 				
 				if(isset($_FILES['img']) && $_FILES['img']['tmp_name'] != ''){
-					if(!is_dir(base_app."uploads/products"))
+					if(!is_dir(base_app."uploads/products")) 
 					mkdir(base_app."uploads/products");
 					$fname = 'uploads/products/'.($pid).'.png';
-					$dir_path =base_app. $fname;
+					$dir_path =base_app.$fname;
 					$upload = $_FILES['img']['tmp_name'];
 					$type = mime_content_type($upload);
 					$allowed = array('image/png','image/jpeg');
@@ -164,7 +164,6 @@ Class Master extends DBConnection {
 						$resp['msg']=" But Image failed to upload due to invalid file type.";
 					}else{
 						
-				
 						list($width, $height) = getimagesize($upload);
 						$new_height = $height; 
 						$new_width = $width; 
